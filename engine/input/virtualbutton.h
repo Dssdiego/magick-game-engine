@@ -54,21 +54,21 @@ private:
     ButtonNode buttons[Input::maxVirtualNodes];
     AxisNode axes[Input::maxVirtualNodes];
 
-    int keysLen = 0;
-    int buttonsLen = 0;
-    int axesLen = 0;
+    int mKeysLen = 0;
+    int mButtonsLen = 0;
+    int mAxesLen = 0;
 
-    float pressBuffer = 0;
-    float releaseBuffer = 0;
-    float repeatDelay = 0;
-    float repeatInterval = 0;
+    float mPressBuffer = 0;
+    float mReleaseBuffer = 0;
+    float mRepeatDelay = 0;
+    float mRepeatInterval = 0;
 
-    bool down = false;
-    bool pressed = false;
-    bool released = false;
-    float lastPressTime = -1;
-    float lastReleaseTime = -1;
-    float repeatPressTime = -1;
+    bool mDown = false;
+    bool mPressed = false;
+    bool mReleased = false;
+    float mLastPressTime = -1;
+    float mLastReleaseTime = -1;
+    float mRepeatPressTime = -1;
 
 public:
     VirtualButton &addKey(Key key);
@@ -79,11 +79,11 @@ public:
     VirtualButton &releaseBuffer(float duration);
 
     void update();
-    bool down() const { return down };
-    bool pressed() const { return pressed };
-    bool released() const { return released };
-    void clearPressBuffer() { lastPressTime = -1; pressed = false };
-    void clearReleaseBuffer() { lastReleaseTime = -1; released = false };
+    bool down() const { return mDown; };
+    bool pressed() const { return mPressed; };
+    bool released() const { return mReleased; };
+    void clearPressBuffer() { mLastPressTime = -1; mPressed = false; };
+    void clearReleaseBuffer() { mLastReleaseTime = -1; mReleased = false; };
 };
 
 
