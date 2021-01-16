@@ -2,8 +2,10 @@
 // Created by Diego Santos Seabra on 03/01/21.
 //
 
-#ifndef PONG_INPUT_H
-#define PONG_INPUT_H
+#ifndef MAGICK_ENGINE_INPUT_H
+#define MAGICK_ENGINE_INPUT_H
+
+#include "../math/vec2.h"
 
 #define MAGICK_KEY_DEFINITIONS \
     DEFINE_KEY(Unknown, 0) \
@@ -238,6 +240,17 @@
     DEFINE_BTN(Left, 13) \
     DEFINE_BTN(Right, 14)
 
+namespace Input
+{
+    constexpr int maxControllers = 8;
+    constexpr int maxControllerButtons = 64;
+    constexpr int maxControllerAxis = 16;
+    constexpr int maxMouseButtons = 16;
+    constexpr int maxKeyboardKeys = 512;
+    constexpr int maxTextInput = 256; // maximum length of text input per frame
+    constexpr int maxVirtualNodes = 32;
+}
+
 // Keyboard keys
 enum class Key
 {
@@ -277,7 +290,14 @@ enum class MouseButton
 
 namespace Input
 {
+    // Mouse position
+    Vec2 mouse();
 
+    // Draw Mouse Position (Mouse Position / Window Size * Draw Size)
+    Vec2 mouseDraw();
+
+    //
+    Vec2 mouseScreen();
 }
 
-#endif //PONG_INPUT_H
+#endif //MAGICK_ENGINE_INPUT_H
