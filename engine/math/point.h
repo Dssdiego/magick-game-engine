@@ -30,7 +30,7 @@ struct Point
     bool operator !=(const Point& rhs) const;
 
     float length() const;
-    int length_squared() const;
+    int lengthSquared() const;
 
     static const Point unitX;
     static const Point unitY;

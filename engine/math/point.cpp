@@ -3,13 +3,14 @@
 //
 
 #include "point.h"
+#include <cmath>
 
 Point::Point()
 {
     x = y = 0;
 }
 
-Point::Point(int px, py)
+Point::Point(int px, int py)
 {
     x = px;
     y = py;
@@ -38,7 +39,7 @@ float Point::length() const
     return sqrtf((float)(x * x + y * y));
 }
 
-int Point::length_squared() const
+int Point::lengthSquared() const
 {
     return x * x + y * y;
 }
