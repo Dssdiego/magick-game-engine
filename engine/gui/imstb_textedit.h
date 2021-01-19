@@ -1151,7 +1151,7 @@ static void stb_textedit_discard_redo(StbUndoState *state)
    int k = STB_TEXTEDIT_UNDOSTATECOUNT-1;
 
    if (state->redo_point <= k) {
-      // if the k'th undo state has characters, clean those up
+      // if the k'th undo state has characters, shutdown those up
       if (state->undo_rec[k].char_storage >= 0) {
          int n = state->undo_rec[k].insert_length, i;
          // move the remaining redo character data to the end of the buffer

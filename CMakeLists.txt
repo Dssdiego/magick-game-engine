@@ -41,12 +41,19 @@ target_compile_definitions(imgui PUBLIC IMGUI_IMPL_OPENGL_LOADER_CUSTOM=<SDL_ope
 add_executable(magick_engine MACOSX_BUNDLE
         main.cpp
 
+        engine/core/magick.cpp
+        engine/core/log.cpp
+        engine/core/time.cpp
+
         engine/graphics/rect.cpp
 
         engine/input/input.cpp
         engine/input/virtualbutton.cpp
 
         engine/internal/graphics_backend.cpp
+        engine/internal/gui_backend.cpp
+        engine/internal/input_backend.h
+        engine/internal/platform_backend_gl.cpp
 
         engine/math/point.cpp
         engine/math/vec2.cpp
